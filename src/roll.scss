@@ -1,0 +1,218 @@
+.component-wrapper {
+  position: relative;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  margin: 7rem auto;
+}
+
+.inputs input,
+.inputs .upload-btn,
+.inputs select {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  flex-basis: 33%;
+  background-color: #2d455b;
+  outline: none;
+  border: none;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 1em;
+  color: #e3e4e8;
+}
+
+.inputs .input-image {
+  display: none;
+}
+
+.inputs input::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #e3e4e8;
+  opacity: 0.5;
+}
+
+.upload-btn {
+  cursor: pointer;
+}
+/* --------------- roll starts  */
+.roll {
+  position: relative;
+  width: 20rem;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.roll * {
+  box-sizing: border-box;
+}
+
+.roll_thickness {
+  z-index: 2;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #e3e4e8;
+  height: 100%;
+  width: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #dfdfdf;
+}
+
+/* lines inside the roll */
+.roll_thickness::after,
+.roll_thickness::before {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  height: 80%;
+  width: 77%;
+  border-radius: 50%;
+  background-color: #dcdcdf;
+  opacity: 0.5;
+}
+
+.roll_thickness::after {
+  height: 60%;
+  width: 55%;
+  opacity: 1;
+  background-color: #e3e4e8;
+}
+
+/* core */
+.thickness_core {
+  position: relative;
+  z-index: 4;
+  width: 1.5rem;
+  border-radius: 50%;
+  background-color: #55462b;
+  background-image: linear-gradient(90deg, #6f6451, #352b2b);
+}
+
+.roll_width--wrapper {
+  overflow: hidden;
+}
+
+.roll_width {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 2.5rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 22% / 50%;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+  background-color: #eeeff4;
+  background-image: linear-gradient(180deg, #f0f1f5, #d1d1d4);
+}
+
+.roll_length {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  position: absolute;
+  z-index: 3;
+  top: 10rem; /* rigth at the half of the roll */
+  left: 4.75rem;
+  width: calc(
+    100% - 2.25rem
+  ); /*total width - (the X movemnt to the left / 2)  */
+  max-width: calc(100% - 2.25rem); /* same as width*/
+  background-color: #e0e1e5;
+  border-left: 4px solid #dfdfdf;
+  min-height: 20rem;
+  max-height: 30rem;
+  overflow-y: hidden;
+}
+
+/* ------------- labels */
+.length_label {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
+  border: 5px solid #e0e1e5;
+  background-color: #009940 !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* roll dimmensions  */
+
+.roll-dimmension-inches {
+  height: 2rem;
+  position: absolute;
+  background-color: #162737;
+  top: -3rem;
+  left: 2rem;
+  border-bottom: 2px solid red;
+}
+
+.roll-dimmension-inches span:after,
+.roll-dimmension-inches span:before {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  background-color: transparent;
+  /* border-left: 2px solid red;
+  border-right: 2px solid red; */
+  background-color: red;
+  width: 0.2rem;
+  height: 1rem;
+}
+
+.roll-dimmension-inches span:after {
+  left: 100%;
+}
+
+.roll-dimmension-inches p {
+  position: relative;
+  top: -1rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.roll-dimmension-inches--core p {
+  position: relative;
+  top: -1rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(-90deg);
+}
+
+.roll-dimmension-inches--core {
+  top: 5rem;
+  left: -2rem;
+  border-bottom: none;
+  border-left: 2px solid red;
+}
+
+.roll-dimmension-inches--core span:after,
+.roll-dimmension-inches--core span:before {
+  width: 1rem;
+  height: 0.2rem;
+  top: 0;
+  left: -0.5rem;
+}
+
+.roll-dimmension-inches--core span:after {
+  top: auto;
+  bottom: 0;
+}
